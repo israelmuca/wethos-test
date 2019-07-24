@@ -1,0 +1,174 @@
+/*
+** Define colors
+** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+$black: #000025ef;
+$wethos-dark: #460082;
+$wethos-medium: #7601dc;
+$wethos-light: #904aff;
+$blue: #4654d5;
+$light-blue: #18a0da;
+$dark-grey: #787878;
+$light-grey: #f4f6fd;
+$white: #fafafa;
+$none: #fff;
+
+/*
+** Define breakpoints and min size of the page
+** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+body {
+  min-width: 300px;
+  min-height: 100vh;
+
+  background-color: $none;
+}
+
+$breakpoint-xs: 360px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 1023px;
+$breakpoint-lg: 1360px;
+$breakpoint-xl: 1500px;
+
+/*
+** Define fonts
+** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+@import url("https://fonts.googleapis.com/css?family=Nunito:200,400,800&display=swap");
+
+// NAVBAR
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@mixin navbar-info {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  font-size: 13.5px;
+  letter-spacing: 0.62px;
+  color: $dark-grey;
+  line-height: 15px;
+}
+
+/*
+** Define container size per breakpoint
+** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+@mixin main-width($size) {
+  @if $size == "small" {
+    @media (max-width: $breakpoint-xs) {
+      margin-right: 3% !important;
+      margin-left: 3% !important;
+    }
+    @media (min-width: $breakpoint-xs) and (max-width: $breakpoint-sm) {
+      margin-right: 5% !important;
+      margin-left: 5% !important;
+    }
+    @media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
+      margin-right: 7.5% !important;
+      margin-left: 7.5% !important;
+    }
+    @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+      margin-right: 10% !important;
+      margin-left: 10% !important;
+    }
+    @media (min-width: $breakpoint-lg) and (max-width: $breakpoint-xl) {
+      margin-right: 20% !important;
+      margin-left: 20% !important;
+    }
+    @media (min-width: $breakpoint-xl) {
+      max-width: 1000px;
+      margin-right: auto !important;
+      margin-left: auto !important;
+    }
+  } @else if $size == "normal" {
+    @media (max-width: $breakpoint-xs) {
+      margin-right: 1% !important;
+      margin-left: 1% !important;
+    }
+    @media (min-width: $breakpoint-xs) and (max-width: $breakpoint-sm) {
+      margin-right: 2% !important;
+      margin-left: 2% !important;
+    }
+    @media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
+      margin-right: 3% !important;
+      margin-left: 3% !important;
+    }
+    @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+      margin-right: 5% !important;
+      margin-left: 5% !important;
+    }
+    @media (min-width: $breakpoint-lg) and (max-width: $breakpoint-xl) {
+      margin-right: 10% !important;
+      margin-left: 10% !important;
+    }
+    @media (min-width: $breakpoint-xl) {
+      max-width: 1300px;
+      margin-right: auto !important;
+      margin-left: auto !important;
+    }
+  }
+}
+
+/*
+** Mixin for transitions
+** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+@mixin transition($duration) {
+  transition: all #{$duration}s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+@mixin page-transition {
+  .page-enter-active,
+  .page-leave-active {
+    transition-property: opacity;
+    transition-timing-function: ease-in-out;
+    transition-duration: 500ms;
+  }
+
+  .page-enter,
+  .page-leave-to {
+    opacity: 0;
+  }
+}
+
+/*
+** Import bulma .sass files to be used
+** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+
+// Bulma variables
+$navbar-height: 4.5rem;
+$navbar-item-img-max-height: 3rem;
+
+$box-background-color: $none;
+$box-shadow: 0px 0px 10px -2px rgba(145,145,145,0.25);
+
+$input-background-color: $light-grey;
+$input-border-color: $none;
+
+$tabs-link-active-border-bottom-color: $black;
+$tabs-link-active-color: $black;
+
+// General variables
+@import "~~bulma/sass/utilities/_all.sass";
+
+// General Reset
+@import "~~bulma/sass/base/_all.sass";
+
+// Forms
+@import "~~bulma/sass/form/shared.sass";
+@import "~~bulma/sass/form/input-textarea.sass";
+@import "~~bulma/sass/form/tools.sass";
+
+// Buttons
+@import "~~bulma/sass/elements/button.sass";
+
+// Box
+@import "~~bulma/sass/elements/box.sass";
+
+// Navbar
+@import "~~bulma/sass/components/navbar.sass";
+
+// Tabs
+@import "~~bulma/sass/components/tabs.sass";
+
+// Grid, Columns & Tiles
+@import "~~bulma/sass/grid/_all.sass";
