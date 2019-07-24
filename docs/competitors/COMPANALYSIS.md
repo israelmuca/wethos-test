@@ -34,7 +34,7 @@ I won't go into detail with this review, it will be mostly visual, to gather inf
 </details>
 
 
-**Key Points**
+**Key Points**  
 Linkedin chose to go with a single column implementation, that is centered on desktop, and goes full width on mobile.
 This solution is easier to implement, as basically elements are just scaled down.  
 
@@ -65,7 +65,7 @@ They also make use of collapsible blocks, that show only a part of the informati
 </details>
 
 
-**Key Points**
+**Key Points**  
 Just as Linkedin, Vettery chose to go with a single column implementation, that is centered on desktop, and goes full width on mobile.
 One aspect.  
 

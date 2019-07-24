@@ -23,6 +23,11 @@ Click [here](./docs/reqs/REQUIREMENTS.md) for more info
 
 ---
 
+## Competitors Analysis
+Click [here](.docs/competitors/COMPANALYSIS.md) for more info
+
+---
+
 ## API Info
 Click [here](./docs/api/API.md) for more info 
 
