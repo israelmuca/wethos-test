@@ -1,5 +1,36 @@
 # Wethos Test
-A hiring test from Wethos: Nuxt app to show a summary of the user's profile and projects
+A hiring test from Wethos: Nuxt app to show a summary of the user's profile and projects 
+
+---
+
+## Performance Analysis
+Click [here](./docs/performance/PERFORMANCE.md) for more info 
+
+---
+
+## Accessibility Analysis
+Click [here](./docs/a11y/A11Y.md) for more info 
+
+---
+
+## SEO Analysis
+Not done, as this is an internal dashboard 
+
+---
+
+## Requirements
+Click [here](./docs/reqs/REQUIREMENTS.md) for more info
+
+---
+
+## API Info
+Click [here](./docs/api/API.md) for more info 
+
+---
+
+## Tech stack
+
+[Nuxt.js](https://nuxtjs.org/) will be used due to the development speed, as it being opinionated, it helps us avoid Vue's boilerplate code and easily output a static site to host on [Netlify](https://netlify.com)
 
 ---
 
@@ -21,24 +52,7 @@ $ npm run generate
 
 # upload to GitHub & Netlify (CI Pipeline)
 $ git push
-```
-
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org) and [Netlify docs](https://www.netlify.com/docs/)  
-
----
-
-## Performance Analysis
-Click [here](./docs/performance/PERFORMANCE.md) for more info 
-
----
-
-## Accessibility Analysis
-Click [here](./docs/a11y/A11Y.md) for more info 
-
----
-
-## API Info
-Click [here](./docs/api/API.md) for more info 
+``` 
 
 ---
 
