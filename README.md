@@ -24,7 +24,7 @@ Click [here](./docs/reqs/REQUIREMENTS.md) for more info
 ---
 
 ## Competitors Analysis
-Click [here](.docs/competitors/COMPANALYSIS.md) for more info
+Click [here](./docs/competitors/COMPANALYSIS.md) for more info
 
 ---
 
@@ -68,3 +68,4 @@ $ git push
 - No validation of `remove`; easy to make mistakes and erase something valuable
 - `Password` and `User` handle PATCH correctly
 - Link in header sends to /admin/dashboard but there's a mixin there to redirect if regular user to /home
+- No mobile menu, impossible to access projects on the phone

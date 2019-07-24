@@ -10,9 +10,14 @@ A hiring test from Wethos: Nuxt app to show a summary of the user's profile and 
 ---
 
 ## API Endpoints
+
+<details>
+<summary>  
+
 ### Signup
 *Used to create a new user on the system, immediately after receiving, sends 200 and does an automatic login*  
 https://staging.api.teams.wethos.co/api/v1/auth/signup  
+</summary>
 
 **POST**  
 - `` object
@@ -42,9 +47,15 @@ Which in turn returns:
   - `refresh_token` string
   - `token_type` string
 
+</details>
+
+<details>
+<summary>
+
 ### Login
 *Used to get the Bearer Token*  
 https://staging.api.teams.wethos.co/oauth/token  
+</summary>
 
 **POST**   
 - `` object
@@ -62,9 +73,16 @@ returns:
     - `refresh_token` string
     - `token_type` string
 
+</details>
+
+<details>
+<summary>
+
 ### Signout
 *Used to signout, sends nothing, receives nothing, probably blacklists the token in the API?*  
 https://staging.api.teams.wethos.co/api/v1/auth/signout  
+
+</summary>
 
 **POST**
 
@@ -76,9 +94,16 @@ https://staging.api.teams.wethos.co/api/v1/auth/resetpassword/
 - `` object
   - `email` string
 
+</details>
+
+<details>
+<summary>
+
 ### Password
 *Used to change the password*  
 https://staging.api.teams.wethos.co/api/v1/auth/password/  
+
+</summary>
 
 **PATCH**
 - `` object
@@ -86,9 +111,16 @@ https://staging.api.teams.wethos.co/api/v1/auth/password/
   - `oldpassword` string 
   - `password` string
 
+</details>
+
+<details>
+<summary>
+
 ### User
 *Used to get the user's data*  
 https://staging.api.teams.wethos.co/api/v1/user  
+
+</summary>
 
 **GET**  
 
@@ -118,19 +150,32 @@ returns:
   - `last_name` string
   - `phone_number` string
 
+</details>
+
+<details>
+<summary>
 
 ### Network
 *Not sure what this is used for*  
 https://staging.api.teams.wethos.co/api/v1/network  
+
+</summary>
 
 **GET**  
 
 returns:
   - ???
 
+</details>
+
+<details>
+<summary>
+
 ### CurrentEspecialist
 *Used to bring all the user's profile data*  
 https://staging.api.teams.wethos.co/api/v1/currentspecialist   
+
+</summary>
 
 **GET**  
 
@@ -182,7 +227,9 @@ returns:
       - `url` string
   - `profile_image` string
   - `projects` array
-    - `` TODO: CONFIRM IF THEY WILL BE ADDED HERE
+    - `` object
+      - `id` number
+      - `name` string
   - `raw` string
   - `roles` array
     - `` object
@@ -190,7 +237,7 @@ returns:
       - `id` number
       - `name` string
   - `tasks` array
-    - `` TODO: CONFIRM IF SOMETHING WILL BE ADDED HERE
+    - `` *out of scope for this test, must be similar to projects*
   - `title` string
   - `user` object
     - `created_at` date
@@ -254,10 +301,69 @@ returns:
 returns:
   - whole data as in GET
 
+</details>
+
+<details>
+<summary>
+
+### Projects
+*Used to receive data about an specific project ID, using that ID instead of XXX in the URL*  
+https://staging.api.teams.wethos.co/api/v1/projects/XXX
+
+</summary>
+
+**GET**  
+
+returns:
+  - `data` array
+    - `` object
+      - `assets` array
+      - `checkpoints` array
+      - `currentscope` array
+        - `description` string (HTML)
+        - `id` number
+        - `name` string
+        - `summary` object
+          - `` *many things that are out of scope for the test, mostly for assesing cost and value and payments (?)*
+      - `description` string
+      - `events` array
+      - `id` number
+      - `name` string
+      - `organization` object
+        - `about` string (HTML)
+        - `assets` array
+        - `contacts` array
+        - `description` string
+        - `id` number
+        - `link` array
+        - `name` string
+        - `website_url` string (URL)
+      - `slack_channel` null
+      - `specialists` array
+        - `` object
+          - `description` string
+          - `id` number
+          - `profile_image` string (URL)
+          - `projectrole` string
+          - `title` string
+          - `user` object
+            - `email` string (email)
+            - `first_name` string
+            - `last_name` string
+      - `statement_of_purpose` string (HTML)
+      - `timeline` array
+
+</details>
+
+<details>
+<summary>
+
 ### Causes
 *Used to fill the dropdown for the individual `Causes` the user may have*  
 *Supports pagination*  
 https://staging.api.teams.wethos.co/api/v1/specialists/causes  
+
+</summary>
 
 **GET**  
 
@@ -271,10 +377,17 @@ returns:
   - `links` for pagination
   - `meta` for pagination
 
+</details>
+
+<details>
+<summary>
+
 ### Capabilities
 *Used to fill the selector for the individual `Capabilities` the user may have*  
 *Supports pagination, however on the current page, 99,999 items are requested*  
 https://staging.api.teams.wethos.co/api/v1/work/capabilities  
+
+</summary>
 
 **GET**  
 
@@ -287,3 +400,5 @@ returns:
       - `name` string
   - `links` for pagination
   - `meta` for pagination
+
+</details>
