@@ -3,7 +3,7 @@ A hiring test from Wethos: Nuxt app to show a summary of the user's profile and 
 
 ---
 
-## Lighthouse
+## Performance
 
 There are areas of opportunity in performance with the dashboard, because even with no throttling on, the site takes more than expected to load.  
 One could argue that being a work application there's no need to focus so much on performance, but I believe with a few tweaks we can improve performance without much time investment.
