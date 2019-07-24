@@ -27,8 +27,18 @@ For detailed explanation on how things work, checkout [Nuxt.js docs](https://nux
 
 ---
 
+## Performance Analysis
+Click [here](./docs/performance/PERFORMANCE.md) for more info 
+
+---
+
+## Accessibility Analysis
+Click [here](./docs/a11y/A11Y.md) for more info 
+
+---
+
 ## API Info
-Click [here](./docs/API.md) for more info 
+Click [here](./docs/api/API.md) for more info 
 
 ---
 
@@ -38,3 +48,4 @@ Click [here](./docs/API.md) for more info
 - When updating `currentspecialist` with PUT, the API sends back the whole object again, and then something GETs the whole object again...
 - No validation of `remove`; easy to make mistakes and erase something valuable
 - `Password` and `User` handle PATCH correctly
+- Link in header sends to /admin/dashboard but there's a mixin there to redirect if regular user to /home
