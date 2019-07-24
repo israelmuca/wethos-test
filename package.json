@@ -1,0 +1,20 @@
+{
+  "name": "wethos-test",
+  "version": "1.0.0",
+  "description": "A hiring test from Wethos: Nuxt app to show a summary of the user&#39;s profile and projects",
+  "author": "Israel Muñoz",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
