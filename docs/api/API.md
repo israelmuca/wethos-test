@@ -306,6 +306,54 @@ returns:
 <details>
 <summary>
 
+### Causes
+*Used to fill the dropdown for the individual `Causes` the user may have*  
+*Supports pagination*  
+https://staging.api.teams.wethos.co/api/v1/specialists/causes  
+
+</summary>
+
+**GET**  
+
+returns:
+  - `data` array
+    - `` object
+      - `description` null
+      - `id` number
+      - `name` string
+      - `reason` null
+  - `links` for pagination
+  - `meta` for pagination
+
+</details>
+
+<details>
+<summary>
+
+### Capabilities
+*Used to fill the selector for the individual `Capabilities` the user may have*  
+*Supports pagination, however on the current page, 99,999 items are requested*  
+https://staging.api.teams.wethos.co/api/v1/work/capabilities  
+
+</summary>
+
+**GET**  
+
+returns:
+  - `data` array
+    - `` object
+      - `brief` string
+      - `description` string
+      - `id` number
+      - `name` string
+  - `links` for pagination
+  - `meta` for pagination
+
+</details>
+
+<details>
+<summary>
+
 ### Projects
 *Used to receive data about an specific project ID, using that ID instead of XXX in the URL*  
 https://staging.api.teams.wethos.co/api/v1/projects/XXX
@@ -358,10 +406,9 @@ returns:
 <details>
 <summary>
 
-### Causes
-*Used to fill the dropdown for the individual `Causes` the user may have*  
-*Supports pagination*  
-https://staging.api.teams.wethos.co/api/v1/specialists/causes  
+### Specialists
+*Used to receive data about all the specialists in the network, it appears to support regular url params*  
+https://staging.api.teams.wethos.co/api/v1/specialists
 
 </summary>
 
@@ -369,36 +416,8 @@ https://staging.api.teams.wethos.co/api/v1/specialists/causes
 
 returns:
   - `data` array
-    - `` object
-      - `description` null
-      - `id` number
-      - `name` string
-      - `reason` null
-  - `links` for pagination
-  - `meta` for pagination
-
-</details>
-
-<details>
-<summary>
-
-### Capabilities
-*Used to fill the selector for the individual `Capabilities` the user may have*  
-*Supports pagination, however on the current page, 99,999 items are requested*  
-https://staging.api.teams.wethos.co/api/v1/work/capabilities  
-
-</summary>
-
-**GET**  
-
-returns:
-  - `data` array
-    - `` object
-      - `brief` string
-      - `description` string
-      - `id` number
-      - `name` string
-  - `links` for pagination
-  - `meta` for pagination
+    - `` *out of scope for test*
+  - `pagination` object
+    - `` *out of scope for test*
 
 </details>
