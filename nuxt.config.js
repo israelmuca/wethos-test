@@ -20,7 +20,11 @@ export default {
   */
   env: {
     OAUTH_URL: process.env.OAUTH_URL,
-    API_URL_BASE: process.env.API_URL_BASE
+    API_URL_BASE: process.env.API_URL_BASE,
+    GRANT_TYPE: process.env.GRANT_TYPE,
+    CLIENT_SECRET: process.env.CLIENT_SECRET,
+    SCOPE: process.env.SCOPE,
+    CLIENT_ID: process.env.CLIENT_ID
   },
   /*
   ** Customize the progress-bar color
