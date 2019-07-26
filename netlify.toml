@@ -9,4 +9,4 @@
     GRANT_TYPE="password"
     CLIENT_SECRET="vCtTyzGt3BX93HyQrixiIu4SSe0aa7veK9lWCefL"
     SCOPE="*"
-    CLIENT_ID=2.0
+    CLIENT_ID="2"
