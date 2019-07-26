@@ -69,3 +69,4 @@ $ git push
 - `Password` and `User` handle PATCH correctly
 - Link in header sends to /admin/dashboard but there's a mixin there to redirect if regular user to /home
 - No mobile menu, impossible to access projects on the phone
+- icons licence: https://iconmonstr.com/license/
