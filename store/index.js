@@ -14,6 +14,22 @@ const createStore = () => {
 
                 firstName: null,
                 lastName: null,
+            },
+
+            curEsp: {
+
+                capabilities: [],
+                causes: [],
+                city: {},
+                description: null,
+                experience: [],
+                id: null,
+                languages: [],
+                links: [],
+                profileImage: null,
+                projects: [],
+                title: null
+
             }
         },
 
@@ -28,6 +44,20 @@ const createStore = () => {
                 state.user.email = user.email
                 state.user.firstName = user.first_name
                 state.user.lastName = user.last_name
+            },
+
+            setCurEsp(state, curEsp) {
+                state.curEsp.capabilities = curEsp.capabilities
+                state.curEsp.causes = curEsp.causes
+                state.curEsp.city = curEsp.city
+                state.curEsp.description = curEsp.description
+                state.curEsp.experience = curEsp.experience
+                state.curEsp.id = curEsp.id
+                state.curEsp.languages = curEsp.languages
+                state.curEsp.links = curEsp.links
+                state.curEsp.profileImage = curEsp.profile_image
+                state.curEsp.projects = curEsp.projects
+                state.curEsp.title = curEsp.title
             }
         },
 
@@ -88,13 +118,35 @@ const createStore = () => {
                 })
             },
 
+            getCurrentSpecialist({ commit }) {
+                return new Promise(async (resolve, reject) => {
+                    try { 
+
+                        // Get the Current Specialist info
+                        let curEsp = await this.$axios.$get(`${process.env.API_URL_BASE}currentspecialist`)
+
+                        // Save the info to the store
+                        commit('setCurEsp', curEsp.data)
+
+                        // Resolve and send the current especialist data
+                        resolve(curEsp.data)
+
+                    } catch (error) {
+
+                        // Reject and send the error
+                        reject(error)
+
+                    }
+                })
+            },
+
             logout({ commit }) {
                 return new Promise((resolve, reject) => {
 
                     commit('setAuthToken', null)
                     commit('setUser', null)
                     resolve()
-                    
+
                 })
             }
 
