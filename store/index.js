@@ -24,10 +24,10 @@ const createStore = () => {
 
             setUser(state, user) {
                 state.user.id = user.id
-                state.user.createdAt = user.createdAt
+                state.user.createdAt = user.created_at
                 state.user.email = user.email
-                state.user.firstName = user.firstName
-                state.user.lastName = user.lastName
+                state.user.firstName = user.first_name
+                state.user.lastName = user.last_name
             }
         },
 
@@ -38,7 +38,7 @@ const createStore = () => {
                     try {
 
                         // Try to login
-                        let loginResult = await this.$axios.post(process.env.OAUTH_URL, {
+                        let login = await this.$axios.post(process.env.OAUTH_URL, {
                             username: user.email,
                             password: user.password,
                             grant_type: process.env.GRANT_TYPE,
@@ -48,42 +48,56 @@ const createStore = () => {
                         })
 
                         // Save token for future use
-                        commit('setAuthToken', loginResult.data.access_token)
+                        commit('setAuthToken', login.data.access_token)
 
                         // Resolve and send the login data
-                        resolve(loginResult.data)
+                        resolve(login.data)
 
-                        // TODO: When time permits, work the refresh token function
+                        // TODO: When time permits, work the refresh token function (it is ignored here)
                         // Could be through middleware in layout or nuxt.config
+                        // Or also through an axios interceptor!
+
                     } catch (error) {
 
                         // Reject and send the error
                         reject(error)
-                    }
-                })
-            },
 
-            logout({ commit }) {
-                return new Promise((resolve, reject) => {
-                    commit('setAuthToken', null)
-                    commit('setUser', null)
-                    resolve()
+                    }
                 })
             },
 
             getUser({ commit }) {
                 return new Promise(async (resolve, reject) => {
                     try {
+
+                        // Get the User's info
                         let user = await this.$axios.$get(`${process.env.API_URL_BASE}user`)
 
-                        console.log(user)
-                        resolve(user)
+                        // Save the info to the store
+                        commit('setUser', user.data)
+
+                        // Resolve and send the login data
+                        resolve(user.data)
+
                     } catch (error) {
-                        console.log(error)
+
+                        // Reject and send the error
                         reject(error)
+
                     }
                 })
+            },
+
+            logout({ commit }) {
+                return new Promise((resolve, reject) => {
+
+                    commit('setAuthToken', null)
+                    commit('setUser', null)
+                    resolve()
+                    
+                })
             }
+
         }
 
     })

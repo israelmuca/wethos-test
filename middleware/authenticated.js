@@ -18,7 +18,9 @@ export default function ({ app, redirect }) {
 
             // Wethos authToken found, set it globally
             if (wethosLS.user.authToken) {
-                app.$axios.setToken(wethosLS.authToken, 'Bearer')
+                app.$axios.setToken(wethosLS.user.authToken, 'Bearer')
+                app.$axios.setHeader('Content-Type', 'application/json')
+                app.$axios.setHeader('X-Requested-With', 'XMLHttpRequest')
             }
         }
     }
