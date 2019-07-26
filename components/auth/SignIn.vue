@@ -79,13 +79,13 @@ export default {
       // Set the button to a load status
       this.isLoading = true
 
-      // Dispatch from the store
+      // Dispatch login from the store
       this.$store
         .dispatch("login", this.signInData)
         .then(res => {
           this.authError = null
           this.isLoading = false
-          /* this.$router.push("/") */
+          this.$router.push("/")
         })
         .catch(err => {
           this.authError = true

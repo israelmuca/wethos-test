@@ -12,12 +12,12 @@ export default function ({ app, redirect }) {
             let wethosLS = JSON.parse(window.localStorage.wethos)
 
             // No Wethos authToken, go to login
-            if (!wethosLS.authToken) {
+            if (!wethosLS.user.authToken) {
                 return redirect('/login')
             }
 
             // Wethos authToken found, set it globally
-            if (wethosLS.authToken) {
+            if (wethosLS.user.authToken) {
                 app.$axios.setToken(wethosLS.authToken, 'Bearer')
             }
         }

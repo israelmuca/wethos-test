@@ -4,9 +4,9 @@ const createStore = () => {
     return new Vuex.Store({
 
         state: {
-            authToken: null,
-
             user: {
+                authToken: null,
+
                 id: null,
                 createdAt: null,
 
@@ -19,15 +19,20 @@ const createStore = () => {
 
         mutations: {
             setAuthToken(state, authToken) {
-                state.authToken = authToken
+                state.user.authToken = authToken
             },
 
             setUser(state, user) {
-                state.user = { ...user }
+                state.user.id = user.id
+                state.user.createdAt = user.createdAt
+                state.user.email = user.email
+                state.user.firstName = user.firstName
+                state.user.lastName = user.lastName
             }
         },
 
         actions: {
+
             login({ commit }, user) {
                 return new Promise(async (resolve, reject) => {
                     try {
@@ -43,15 +48,38 @@ const createStore = () => {
                         })
 
                         // Save token for future use
-                        commit('setAuth', loginResult.data.token)
+                        commit('setAuthToken', loginResult.data.access_token)
 
                         // Resolve and send the login data
-                        resolve(data)
+                        resolve(loginResult.data)
 
-                        // TODO: Refresh token is not currently used
+                        // TODO: When time permits, work the refresh token function
+                        // Could be through middleware in layout or nuxt.config
                     } catch (error) {
 
                         // Reject and send the error
+                        reject(error)
+                    }
+                })
+            },
+
+            logout({ commit }) {
+                return new Promise((resolve, reject) => {
+                    commit('setAuthToken', null)
+                    commit('setUser', null)
+                    resolve()
+                })
+            },
+
+            getUser({ commit }) {
+                return new Promise(async (resolve, reject) => {
+                    try {
+                        let user = await this.$axios.$get(`${process.env.API_URL_BASE}user`)
+
+                        console.log(user)
+                        resolve(user)
+                    } catch (error) {
+                        console.log(error)
                         reject(error)
                     }
                 })

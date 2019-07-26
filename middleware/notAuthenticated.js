@@ -10,7 +10,7 @@ export default function ({ redirect }) {
             let wethosLS = JSON.parse(window.localStorage.wethos)
 
             // authToken found, go home!
-            if (wethosLS.authToken) {
+            if (wethosLS.user.authToken) {
                 return redirect('/')
             }
         }
