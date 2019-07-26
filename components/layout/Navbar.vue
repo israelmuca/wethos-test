@@ -1,8 +1,8 @@
 <template>
-  <!-- On desktop it includes all the links -->
-  <!-- On mobile only the logo (center) will be shown -->
 
   <!-- Top Navbar -->
+  <!-- Desktop: Shows all the navigation links -->
+  <!-- Mobile: Only shows the logo in the middle -->
   <nav
     class="navbar is-transparent top-navbar has-shadow"
     role="navigation"
@@ -37,10 +37,12 @@
     </div>
 
     <!-- Bottom Navbar -->
+    <!-- Desktop: Hidden -->
+    <!-- Mobile: Shows the hamburguer menu -->
     <nav
       class="navbar is-transparent is-fixed-bottom bottom-navbar has-shadow is-hidden-desktop"
       role="navigation"
-      aria-label="main navigation"
+      aria-label="mobile navigation"
     >
       <div class="navbar-brand">
         <a
@@ -63,11 +65,7 @@
           <hr />
           <nuxt-link class="navbar-item" exact to="/" @click.native="showNav = !showNav">Home</nuxt-link>
           <nuxt-link class="navbar-item" to="/projects" @click.native="showNav = !showNav">Projects</nuxt-link>
-          <nuxt-link
-            class="navbar-item"
-            to="/specialists"
-            @click.native="showNav = !showNav"
-          >Specialists</nuxt-link>
+          <nuxt-link class="navbar-item" to="/specialists" @click.native="showNav = !showNav">Specialists</nuxt-link>
           <nuxt-link class="navbar-item" to="/network" @click.native="showNav = !showNav">Network</nuxt-link>
         </div>
       </div>
@@ -136,12 +134,8 @@ export default {
     margin-left: 0;
 
     hr {
-      margin: 2px;
-    }
-
-    .navbar-end {
-      display: flex;
-      justify-content: space-around;
+      margin-top: 2px;
+      margin-bottom: 2px;
     }
   }
 }
