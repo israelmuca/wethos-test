@@ -2,7 +2,10 @@
   <div class="section box column is-6" v-if="this.curEsp">
     <h2 class="box-title">Languages</h2>
 
-    <div v-for="(lang, k) in this.spokenLangs" :key="k">{{ lang }}, Level: {{ curEsp.languages[k].level }}</div>
+    <div class="lang" v-for="(lang, k) in this.spokenLangs" :key="k">
+      <p class="lang-name">{{ lang }}</p>
+      <progress class="progress is-small is-success" :value="curEsp.languages[k].level" max="5"></progress>
+    </div>
   </div>
 </template>
 
@@ -20,7 +23,7 @@ export default {
 
       // Cycle through the user's languages
       this.curEsp.languages.forEach(l => {
-        // Using the l.code as key, get the value
+        // Using the l.code as key, get the value in languages
         let lang = languages[l.code]
 
         // Some languages have two words (Spanish; Castilian), keep the 1st
@@ -36,4 +39,20 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@import "~/assets/css/main.scss";
+
+.box-title {
+  @include box-title;
+}
+
+.lang {
+  margin-bottom: 10px;
+
+  .lang-name {
+    @include lang-name;
+  }
+}
+</style>
 

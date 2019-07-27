@@ -1,7 +1,7 @@
 <template>
   <div>
     <BasicInfo></BasicInfo>
-    <div class="columns">
+    <div class="columns is-mobile">
       <Languages></Languages>
     </div>
   </div>
@@ -30,3 +30,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@import "~/assets/css/main.scss";
+
+.columns {
+  @include main-width("small");
+}
+</style>

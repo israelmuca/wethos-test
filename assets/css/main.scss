@@ -131,6 +131,36 @@ $breakpoint-xl: 1500px;
   }
 }
 
+// Box
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@mixin box-title {
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  color: $black;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 21.5px;
+  }
+
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+// Language
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@mixin lang-name {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: $black;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 19px;
+  }
+}
+
+
 /*
 ** Define container size per breakpoint
 ** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -247,11 +277,11 @@ $tabs-link-active-color: $black;
 // Box
 @import "~~bulma/sass/elements/box.sass";
 
+// Progress Bar
+@import "~~bulma/sass/elements/progress.sass";
+
 // Navbar
 @import "~~bulma/sass/components/navbar.sass";
-
-// Tabs
-@import "~~bulma/sass/components/tabs.sass";
 
 // Grid, Columns & Tiles
 @import "~~bulma/sass/grid/_all.sass";
