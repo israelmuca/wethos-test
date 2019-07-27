@@ -40,21 +40,17 @@ export default {
 
     padding-left: 5px;
 
-    /* &::after {
-      display: inline-block;
-      margin-left: 15px;
-      content: " ";
-      background-image: url("~static/svgs/ext-link.svg");
-      background-size: 14px 14px;
-      height: 14px;
-      width: 14px;
-
-      @media ($breakpoint-sm) {
-        background-size: 5px 5px;
-        height: 5px;
-        width: 5px;
+    @media (max-width: $breakpoint-md) {
+      &::before {
+        display: inline-block;
+        margin-left: -20px;
+        content: " ";
+        background-image: url("~static/svgs/ext-link.svg");
+        background-size: 14px 14px;
+        height: 14px;
+        width: 14px;
       }
-    } */
+    }
   }
 }
 </style>
