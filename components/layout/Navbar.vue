@@ -1,5 +1,4 @@
 <template>
-
   <!-- Top Navbar -->
   <!-- Desktop: Shows all the navigation links -->
   <!-- Mobile: Only shows the logo in the middle -->
@@ -16,10 +15,10 @@
 
     <div class="navbar-menu">
       <div class="navbar-start">
-        <nuxt-link class="navbar-item" exact to="/">Home</nuxt-link>
-        <nuxt-link class="navbar-item" to="/projects">Projects</nuxt-link>
-        <nuxt-link class="navbar-item" to="/specialists">Specialists</nuxt-link>
-        <nuxt-link class="navbar-item" to="/network">Network</nuxt-link>
+        <nuxt-link class="navbar-item desktop-navbar-item" exact to="/">Home</nuxt-link>
+        <nuxt-link class="navbar-item desktop-navbar-item" to="/projects">Projects</nuxt-link>
+        <nuxt-link class="navbar-item desktop-navbar-item" to="/specialists">Specialists</nuxt-link>
+        <nuxt-link class="navbar-item desktop-navbar-item" to="/network">Network</nuxt-link>
       </div>
 
       <div class="navbar-end">
@@ -30,7 +29,7 @@
           <div class="navbar-dropdown is-right is-boxed">
             <p class="navbar-item email">{{ email }}</p>
             <hr class="navbar-divider" />
-            <a href @click="logout()" class="navbar-item">Logout</a>
+            <a href @click="logout()" class="navbar-item logout">Logout</a>
           </div>
         </div>
       </div>
@@ -61,12 +60,30 @@
 
       <div class="navbar-menu" :class="{ 'is-active': showNav }">
         <div class="navbar-start">
-          <a href @click="logout()" class="navbar-item">Logout</a>
+          <p class="navbar-item email">{{ email }}</p>
+          <a href @click="logout()" class="navbar-item mobile-navbar-item">Logout</a>
           <hr />
-          <nuxt-link class="navbar-item" exact to="/" @click.native="showNav = !showNav">Home</nuxt-link>
-          <nuxt-link class="navbar-item" to="/projects" @click.native="showNav = !showNav">Projects</nuxt-link>
-          <nuxt-link class="navbar-item" to="/specialists" @click.native="showNav = !showNav">Specialists</nuxt-link>
-          <nuxt-link class="navbar-item" to="/network" @click.native="showNav = !showNav">Network</nuxt-link>
+          <nuxt-link
+            class="navbar-item mobile-navbar-item"
+            exact
+            to="/"
+            @click.native="showNav = !showNav"
+          >Home</nuxt-link>
+          <nuxt-link
+            class="navbar-item mobile-navbar-item"
+            to="/projects"
+            @click.native="showNav = !showNav"
+          >Projects</nuxt-link>
+          <nuxt-link
+            class="navbar-item mobile-navbar-item"
+            to="/specialists"
+            @click.native="showNav = !showNav"
+          >Specialists</nuxt-link>
+          <nuxt-link
+            class="navbar-item mobile-navbar-item"
+            to="/network"
+            @click.native="showNav = !showNav"
+          >Network</nuxt-link>
         </div>
       </div>
     </nav>
@@ -101,7 +118,7 @@ export default {
 @import "~/assets/css/main.scss";
 
 .top-navbar {
-  background-color: transparent;
+  background-color: $none;
 
   // Center the logo on mobile
   @media (max-width: $breakpoint-md) {
@@ -119,23 +136,49 @@ export default {
   }
   .navbar-menu {
     margin-left: 2em;
+
+    .desktop-navbar-item {
+      @include desktop-navbar-item;
+    }
+
+    .nuxt-link-active {
+      text-decoration-color: $wethos-medium;
+      text-decoration-line: underline;
+    }
   }
   .navbar-end {
     .user-icon-dropdown {
       padding-right: 1.5em;
     }
+
+    .navbar-item.email {
+      @include desktop-navbar-info;
+    }
+
+    .navbar-item.logout {
+      @include desktop-navbar-item;
+    }
   }
 }
 
 .bottom-navbar {
-  background-color: transparent;
+  background-color: $none;
 
   .navbar-menu {
     margin-left: 0;
 
+    .mobile-navbar-info,
+    .navbar-item.email {
+      @include mobile-navbar-info;
+    }
+
     hr {
       margin-top: 2px;
       margin-bottom: 2px;
+    }
+
+    .mobile-navbar-item {
+      @include mobile-navbar-item;
     }
   }
 }

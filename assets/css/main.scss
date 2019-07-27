@@ -36,6 +36,44 @@ $breakpoint-xl: 1500px;
 */
 @import url("https://fonts.googleapis.com/css?family=Nunito:200,400,800&display=swap");
 
+// Navbar
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@mixin desktop-navbar-item {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: $black;
+
+  &:hover {
+    color: $wethos-medium;
+  }
+}
+
+@mixin desktop-navbar-info {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: $dark-grey;
+}
+
+@mixin mobile-navbar-item {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: $black;
+
+  &:hover {
+    color: $wethos-medium;
+  }
+}
+
+@mixin mobile-navbar-info {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: $dark-grey;
+}
+
 // Info
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 @mixin info-name {
