@@ -13,7 +13,10 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    ],
+    htmlAttrs: {
+      class: 'has-navbar-fixed-bottom'
+    }
   },
   /*
   ** ENV variables
@@ -48,7 +51,8 @@ export default {
   modules: [
     '@nuxtjs/dotenv',
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    'nuxt-dayjs-module'
   ],
   /*
   ** Axios module configuration
