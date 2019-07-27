@@ -1,5 +1,5 @@
 <template>
-  <div class="column is-6">
+  <section class="column is-6">
     <div class="box" v-if="this.curEsp">
       <h2 class="box-title">Languages</h2>
 
@@ -8,7 +8,7 @@
         <progress class="progress is-small is-success" :value="curEsp.languages[k].level" max="5"></progress>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

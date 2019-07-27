@@ -1,5 +1,5 @@
 <template>
-  <div class="column is-5">
+  <section class="column is-5">
     <div class="box" v-if="this.curEsp">
       <h2 class="box-title">Links</h2>
 
@@ -12,7 +12,7 @@
         > {{ link.title }}</a>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
