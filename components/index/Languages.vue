@@ -1,5 +1,5 @@
 <template>
-  <section class="column is-6">
+  <section class="column is-5-mobile is-6-tablet">
     <div class="box" v-if="this.curEsp">
       <h2 class="box-title">Languages</h2>
 
