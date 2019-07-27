@@ -15,7 +15,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     htmlAttrs: {
-      class: 'has-navbar-fixed-bottom'
+      style: 'padding-bottom: 80px;'
     }
   },
   /*
