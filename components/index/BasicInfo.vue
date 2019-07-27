@@ -44,16 +44,6 @@ export default {
 
   computed: {
     ...mapState(["user", "curEsp"])
-  },
-
-  beforeCreate() {
-    this.$store.dispatch("getUser").then(res => {
-      console.info("User loaded successfully")
-    })
-
-    this.$store.dispatch("getCurrentSpecialist").then(res => {
-      console.info("Current Specialist loaded successfully")
-    })
   }
 }
 </script>
