@@ -70,3 +70,10 @@ $ git push
 - Link in header sends to /admin/dashboard but there's a mixin there to redirect if regular user to /home
 - No mobile menu, impossible to access projects on the phone
 - icons licence: https://iconmonstr.com/license/
+
+## TODOs
+- 'login': Improve the login screen, too basic
+- 'SignIn': Add better comments to the component
+- '/': Try the bottom navbar with individual items, not hamburguer menu
+- Move 'SignIn' loading indicator to the store, same for 'BasicInfo'
+- Set Skeleton screens for the image and text loading
