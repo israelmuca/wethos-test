@@ -1,5 +1,5 @@
 <template>
-  <section class="column is-5-mobile is-6-tablet">
+  <section class="column is-4-mobile is-5-tablet">
     <div class="box" v-if="this.curEsp">
       <h2 class="box-title">Links</h2>
 
@@ -40,9 +40,9 @@ export default {
 
     padding-left: 5px;
 
-    &::before {
+    /* &::after {
       display: inline-block;
-      margin-left: -15px;
+      margin-left: 15px;
       content: " ";
       background-image: url("~static/svgs/ext-link.svg");
       background-size: 14px 14px;
@@ -54,7 +54,7 @@ export default {
         height: 5px;
         width: 5px;
       }
-    }
+    } */
   }
 }
 </style>

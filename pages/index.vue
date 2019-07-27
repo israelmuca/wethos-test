@@ -1,10 +1,11 @@
 <template>
-  <div>
+  <div class="index-container">
     <BasicInfo></BasicInfo>
     <div class="columns is-mobile">
       <Languages></Languages>
       <Links></Links>
     </div>
+    <Causes></Causes>
   </div>
 </template>
 
@@ -12,6 +13,7 @@
 import BasicInfo from "~/components/index/BasicInfo"
 import Languages from "~/components/index/Languages"
 import Links from "~/components/index/Links"
+import Causes from "~/components/index/Causes"
 
 export default {
   middleware: "authenticated",
@@ -19,7 +21,8 @@ export default {
   components: {
     BasicInfo,
     Languages,
-    Links
+    Links,
+    Causes
   },
 
   mounted() {
@@ -37,7 +40,7 @@ export default {
 <style lang="scss" scoped>
 @import "~/assets/css/main.scss";
 
-.columns {
+.index-container {
   @include main-width("small");
 }
 </style>

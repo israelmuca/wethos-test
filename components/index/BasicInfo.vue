@@ -1,5 +1,5 @@
 <template>
-  <main class="container">
+  <main>
     <section class="image-and-data columns is-vcentered is-mobile">
       <!-- Image -->
       <!-- Show placeholder image if no image or when loading -->
@@ -51,9 +51,7 @@ export default {
 <style lang="scss" scoped>
 @import "~/assets/css/main.scss";
 
-.container {
-  @include main-width("small");
-
+main {
   padding-top: 5vw;
 
   .image-column-loaded {
@@ -96,6 +94,8 @@ export default {
 
   .info-description {
     @include info-description;
+
+    max-width: 95%;
   }
 }
 </style>
