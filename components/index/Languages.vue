@@ -1,10 +1,12 @@
 <template>
-  <div class="section box column is-6" v-if="this.curEsp">
-    <h2 class="box-title">Languages</h2>
+  <div class="column is-6">
+    <div class="box" v-if="this.curEsp">
+      <h2 class="box-title">Languages</h2>
 
-    <div class="lang" v-for="(lang, k) in this.spokenLangs" :key="k">
-      <p class="lang-name">{{ lang }}</p>
-      <progress class="progress is-small is-success" :value="curEsp.languages[k].level" max="5"></progress>
+      <div class="lang" v-for="(lang, k) in this.spokenLangs" :key="k">
+        <p class="lang-name">{{ lang }}</p>
+        <progress class="progress is-small is-success" :value="curEsp.languages[k].level" max="5"></progress>
+      </div>
     </div>
   </div>
 </template>
@@ -52,6 +54,8 @@ export default {
 
   .lang-name {
     @include lang-name;
+
+    padding-left: 5px;
   }
 }
 </style>

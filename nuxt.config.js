@@ -37,6 +37,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '~/assets/css/v-tooltip.scss'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -44,6 +45,7 @@ export default {
   plugins: [
     { src: '~/plugins/vuex-persist', ssr: false },
     { src: '~/plugins/axios', ssr: false },
+    { src: '~/plugins/v-tooltip', ssr: false }
   ],
   /*
   ** Nuxt.js modules

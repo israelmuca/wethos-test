@@ -160,6 +160,19 @@ $breakpoint-xl: 1500px;
   }
 }
 
+// Link
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@mixin link-name {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: $black;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 19px;
+  }
+}
+
 
 /*
 ** Define container size per breakpoint
