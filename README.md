@@ -77,3 +77,4 @@ $ git push
 - '/': Try the bottom navbar with individual items, not hamburguer menu
 - Move 'SignIn' loading indicator to the store, same for 'BasicInfo'
 - Set Skeleton screens for the image and text loading
+- Verify which domains are used the most for the links, get the appropiate svg's and map them so we add the proper icon depending on the domain (eg. Twitter, Linkedin, etc...)
