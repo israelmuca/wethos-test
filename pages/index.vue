@@ -1,15 +1,15 @@
 <template>
-  <p>I'm logged in!</p>
+  <BasicInfo></BasicInfo>
 </template>
 
 <script>
+import BasicInfo from "~/components/index/BasicInfo"
+
 export default {
   middleware: "authenticated",
 
-  mounted() {
-    this.$store.dispatch("getUser").then(res => {
-      console.log(res)
-    })
+  components: {
+    BasicInfo
   }
 }
 </script>
