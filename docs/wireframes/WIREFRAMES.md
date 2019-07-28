@@ -47,7 +47,7 @@ Finally:
 <details>
 <summary>
 
-## Inspiration from Dribbble
+## Inspiration from Dribbble for main app
 </summary>
 
 ![Screenshot from Dribble](./images/Dribble1.jpg)
@@ -65,5 +65,10 @@ Finally:
 ## Wireframes
 </summary>
 
+Round 1
 ![iPad Screenshot](./images/Wireframe1.png)
+
+Round 2, mobile menu
+![iPad Screenshot](./images/Wireframe2.png)
+![iPad Screenshot](./images/Wireframe3.png)
 </details>
