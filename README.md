@@ -79,3 +79,4 @@ $ git push
 - Set Skeleton screens for the image and text loading
 - Verify which domains are used the most for the links, get the appropiate svg's and map them so we add the proper icon depending on the domain (eg. Twitter, Linkedin, etc...)
 - Language function should ideally be in the backend, as to make the front faster; Or maybe I could add it to the prototype, but it would be clearer if it lived in the backend.
+- No error handling for when API returns no data or just fails
