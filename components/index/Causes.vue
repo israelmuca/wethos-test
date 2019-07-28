@@ -6,7 +6,7 @@
 
         <div class="cause" v-for="(c, k) in curEsp.causes" :key="k">
           <p class="cause-name">{{ c.name }}</p>
-          <p class="cause-reason">{{ c.reason }}</p>
+          <blockquote class="cause-reason">{{ c.reason }}</blockquote>
           <br />
         </div>
       </div>

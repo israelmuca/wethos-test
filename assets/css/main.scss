@@ -191,6 +191,7 @@ $breakpoint-xl: 1500px;
   font-weight: 400;
   font-size: 14px;
   color: $black;
+  font-style: italic;
 
   @media (min-width: $breakpoint-md) {
     font-size: 17px;
