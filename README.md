@@ -81,3 +81,5 @@ $ git push
 - Language function should ideally be in the backend, as to make the front faster; Or maybe I could add it to the prototype, but it would be clearer if it lived in the backend.
 - No error handling for when API returns no data or just fails
 - Had to hard code some percentage % instead of relying on flexbox for the columns in the index; Go back to that
+- Implement native-like animations to move the picture from the main description, to the top-right corner when we change to the other pages
+https://css-tricks.com/native-like-animations-for-page-transitions-on-the-web/
