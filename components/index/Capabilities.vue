@@ -1,33 +1,24 @@
 <template>
   <div class="columns">
-    <section class="column is-12 causes">
+    <section class="column is-12 capabilities">
       <div class="box" v-if="this.curEsp">
         <h2 class="box-title">Capabilities</h2>
 
-        <bulma-accordion :icon="'plus-minus'">
+        <bulma-accordion>
           <bulma-accordion-item
             class="category"
-            v-for="(category, k) in Object.keys(orgCap)"
+            v-for="(category, k) in Object.keys(organizedCapabilities)"
             :key="k"
           >
-            <h3 slot="title" class="category-title">{{ category }}</h3>
+            <h4 slot="title" class="category-title">{{ category }}</h4>
             <p
               slot="content"
               class="category-item"
-              v-for="(capability, ke) in orgCap[category]"
+              v-for="(capability, ke) in organizedCapabilities[category]"
               :key="ke"
             >{{ capability }}</p>
           </bulma-accordion-item>
         </bulma-accordion>
-
-        <!-- <div class="category" v-for="(category, k) in Object.keys(orgCap)" :key="k">
-          <h3 class="category-title">{{ category }}</h3>
-          <p
-            class="category-item"
-            v-for="(capability, ke) in orgCap[category]"
-            :key="ke"
-          >{{ capability }}</p>
-        </div>-->
       </div>
     </section>
   </div>
@@ -44,7 +35,7 @@ export default {
   },
   data() {
     return {
-      orgCap: {}
+      organizedCapabilities: {}
     }
   },
   computed: {
@@ -65,42 +56,71 @@ export default {
     // Organize the capabilities in a better format
     mapCapabilities() {
       // Start with a clean slate everytime this runs
-      this.orgCap = {}
+      this.organizedCapabilities = {}
 
       this.curEsp.capabilities.forEach(cap => {
         // Get current capability role name
         let roleName = cap.role.name
 
         // Confirm the role doesn't exist in the organizedCapabilities
-        if (!this.orgCap[roleName]) {
+        if (!this.organizedCapabilities[roleName]) {
           // Add the role to the object
-          this.orgCap[roleName] = roleName
+          this.organizedCapabilities[roleName] = roleName
 
           // Set the role to an Array
-          this.orgCap[roleName] = []
+          this.organizedCapabilities[roleName] = []
         }
         // Push the capability to it's array
-        this.orgCap[roleName].push(cap.name)
+        this.organizedCapabilities[roleName].push(cap.name)
       })
     }
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "~/assets/css/main.scss";
 
-.box-title {
-  @include box-title;
-}
+.capabilities {
+  width: 95.5% !important;
 
-.category {
-  .category-title {
-    @include category-title;
+  .box-title {
+    @include box-title;
   }
 
-  .category-item {
-    @include category-item;
+  .card-header {
+    display: flex;
+
+    cursor: pointer;
+
+    .card-header-icon {
+      max-height: 18px;
+
+      svg {
+        margin-left: 20px;
+
+        height: 18px;
+        width: 18px;
+      }
+    }
+  }
+  .category {
+    .category-title {
+      @include category-title;
+    }
+
+    .category-item {
+      @include category-item;
+
+      padding-left: 5px;
+      margin-bottom: 2px;
+
+      &::before {
+        display: inline-block;
+        content: "-";
+        padding-right: 3px;
+      }
+    }
   }
 }
 </style>
