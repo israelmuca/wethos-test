@@ -33,7 +33,9 @@ const createStore = () => {
                 projects: [],
                 title: null
 
-            }
+            },
+
+            projects: []
         },
 
         mutations: {
@@ -65,6 +67,10 @@ const createStore = () => {
                 state.curEsp.profileImage = curEsp.profile_image
                 state.curEsp.projects = curEsp.projects
                 state.curEsp.title = curEsp.title
+            },
+
+            pushProject(state, project) {
+                state.projects.push(project)
             }
         },
 
@@ -125,7 +131,7 @@ const createStore = () => {
                 })
             },
 
-            getCurrentSpecialist({ commit }) {
+            getCurrentSpecialist({ commit, dispatch }) {
 
                 // Start loading
                 commit('setLoadingCurEsp', true)
@@ -142,6 +148,11 @@ const createStore = () => {
                         // Done loading
                         commit('setLoadingCurEsp', false)
 
+                        // Now that we know which projects the user has, get them all
+                        dispatch('getProjects').then(res => {
+                            console.info("Projects loaded successfully")
+                        })
+
                         // Resolve and send the current especialist data
                         resolve(curEsp.data)
 
@@ -153,6 +164,32 @@ const createStore = () => {
                         // Reject and send the error
                         reject(error)
 
+                    }
+                })
+            },
+
+            getProjects({ commit, state }) {
+                // Start loading
+
+                return new Promise(async (resolve, reject) => {
+                    try {
+
+                        // From the currentSpecialist's projects, get all of their data
+                        state.curEsp.projects.forEach(async p => {
+
+                            // Get one new full project
+                            let project = await this.$axios.$get(`${process.env.API_URL_BASE}projects/${p.id}`)
+
+                            // Add the new full project to the state
+                            commit('pushProject', project)
+                        })
+
+                        // Resolve and send the whole array of full projects
+                        resolve(state.projects)
+
+                    } catch (error) {
+                        // Reject and send the error
+                        reject(error)
                     }
                 })
             },
