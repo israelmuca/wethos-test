@@ -82,7 +82,7 @@ export default {
 @import "~/assets/css/main.scss";
 
 .capabilities {
-  width: 95.5% !important;
+  width: 94.5% !important;
 
   .box-title {
     @include box-title;

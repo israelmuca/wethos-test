@@ -45,6 +45,10 @@ export default {
 <style lang="scss" scoped>
 @import "~/assets/css/main.scss";
 
+.column.is-6 {
+  width: 47.2% !important;
+}
+
 .box-title {
   @include box-title;
 }

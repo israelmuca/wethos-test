@@ -1,5 +1,5 @@
 <template>
-  <section class="column is-4-mobile is-5-tablet">
+  <section class="column is-6">
     <div class="box" v-if="this.curEsp">
       <h2 class="box-title">Links</h2>
 
@@ -9,7 +9,7 @@
           target="_blank"
           class="link-name"
           v-tooltip.right="link.url"
-        > {{ link.title }}</a>
+        >{{ link.title }}</a>
       </div>
     </div>
   </section>
@@ -28,12 +28,18 @@ export default {
 <style lang="scss" scoped>
 @import "~/assets/css/main.scss";
 
+.column.is-6 {
+  width: 47.2% !important;
+}
+
 .box-title {
   @include box-title;
 }
 
 .link {
-  margin-bottom: 10px;
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
 
   .link-name {
     @include link-name;
