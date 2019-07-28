@@ -23,6 +23,7 @@
     "nuxt-dayjs-module": "^0.1.2",
     "sass-loader": "^7.1.0",
     "v-tooltip": "^2.0.2",
+    "vue-bulma-accordion": "^0.4.8",
     "vuelidate": "^0.7.4",
     "vuex-persist": "^2.0.1"
   }

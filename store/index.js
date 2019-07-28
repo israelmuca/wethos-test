@@ -4,6 +4,9 @@ const createStore = () => {
     return new Vuex.Store({
 
         state: {
+
+            loadingCurEsp: null,
+
             user: {
                 authToken: null,
 
@@ -44,6 +47,10 @@ const createStore = () => {
                 state.user.email = user.email
                 state.user.firstName = user.first_name
                 state.user.lastName = user.last_name
+            },
+
+            setLoadingCurEsp(state, loadStatus) {
+                state.loadingCurEsp = loadStatus
             },
 
             setCurEsp(state, curEsp) {
@@ -119,8 +126,12 @@ const createStore = () => {
             },
 
             getCurrentSpecialist({ commit }) {
+
+                // Start loading
+                commit('setLoadingCurEsp', true)
+
                 return new Promise(async (resolve, reject) => {
-                    try { 
+                    try {
 
                         // Get the Current Specialist info
                         let curEsp = await this.$axios.$get(`${process.env.API_URL_BASE}currentspecialist`)
@@ -128,10 +139,16 @@ const createStore = () => {
                         // Save the info to the store
                         commit('setCurEsp', curEsp.data)
 
+                        // Done loading
+                        commit('setLoadingCurEsp', false)
+
                         // Resolve and send the current especialist data
                         resolve(curEsp.data)
 
                     } catch (error) {
+
+                        // Done loading
+                        commit('setLoadingCurEsp', false)
 
                         // Reject and send the error
                         reject(error)

@@ -198,6 +198,29 @@ $breakpoint-xl: 1500px;
   }
 }
 
+// Category
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@mixin category-title {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: $black;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 19px;
+  }
+}
+
+@mixin category-item {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: $black;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 17px;
+  }
+}
 
 /*
 ** Define container size per breakpoint

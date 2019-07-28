@@ -6,6 +6,7 @@
       <Links></Links>
     </div>
     <Causes></Causes>
+    <Capabilities></Capabilities>
   </div>
 </template>
 
@@ -14,6 +15,7 @@ import BasicInfo from "~/components/index/BasicInfo"
 import Languages from "~/components/index/Languages"
 import Links from "~/components/index/Links"
 import Causes from "~/components/index/Causes"
+import Capabilities from "~/components/index/Capabilities"
 
 export default {
   middleware: "authenticated",
@@ -22,7 +24,8 @@ export default {
     BasicInfo,
     Languages,
     Links,
-    Causes
+    Causes,
+    Capabilities
   },
 
   mounted() {
