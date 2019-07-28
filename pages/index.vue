@@ -28,7 +28,7 @@ export default {
     Capabilities
   },
 
-  mounted() {
+  beforeCreate() {
     this.$store.dispatch("getUser").then(res => {
       console.info("User loaded successfully")
     })
