@@ -83,3 +83,4 @@ $ git push
 - Had to hard code some percentage % instead of relying on flexbox for the columns in the index; Go back to that
 - Implement native-like animations to move the picture from the main description, to the top-right corner when we change to the other pages
 https://css-tricks.com/native-like-animations-for-page-transitions-on-the-web/
+- Remove the data processing from the Capabilities component, send that function to a utils/mapCapabilities function and use that in the store before saving the data
