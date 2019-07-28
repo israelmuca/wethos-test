@@ -70,7 +70,16 @@ const createStore = () => {
             },
 
             pushProject(state, project) {
-                state.projects.push(project)
+
+                // Get the ids from the state
+                let ids = state.projects.map(p => p.id)
+
+                // Compare the project id with the ones from state
+                if (!ids.includes(project.id)) {
+
+                    // New project, push!
+                    state.projects.push(project)
+                }
             }
         },
 
@@ -181,7 +190,7 @@ const createStore = () => {
                             let project = await this.$axios.$get(`${process.env.API_URL_BASE}projects/${p.id}`)
 
                             // Add the new full project to the state
-                            commit('pushProject', project)
+                            commit('pushProject', project.data)
                         })
 
                         // Resolve and send the whole array of full projects
