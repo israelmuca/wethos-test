@@ -86,3 +86,4 @@ https://css-tricks.com/native-like-animations-for-page-transitions-on-the-web/
 - Remove the data processing from the Capabilities component, send that function to a utils/mapCapabilities function and use that in the store before saving the data
 - Implement a function in the backend that gives a hash or sets a _lastUpdatedDate_. Query the API for this data, if it's the same, avoid making another call.
 - Move the Store Dispatches from the Login page into the store (after login)
+- Add more data to the individual project box
