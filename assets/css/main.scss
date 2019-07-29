@@ -274,6 +274,39 @@ $breakpoint-xl: 1500px;
   color: $dark-grey;
 }
 
+@mixin ind-project-name {
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  color: $black;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 23px;
+  }
+}
+
+@mixin ind-project-organization {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  color: $black;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 22px;
+  }
+}
+
+@mixin ind-project-description {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: $black;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 21px;
+  }
+}
+
 /*
 ** Define container size per breakpoint
 ** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
