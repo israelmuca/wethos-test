@@ -222,6 +222,58 @@ $breakpoint-xl: 1500px;
   }
 }
 
+// Projects
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@mixin projects-page-title {
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
+  font-size: 23px;
+  color: $black;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 27px;
+  }
+}
+
+@mixin project-name {
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  color: $black;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 21px;
+  }
+}
+@mixin project-organization {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  color: $black;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 20px;
+  }
+}
+
+@mixin project-description {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: $black;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 19px;
+  }
+}
+
+@mixin see-more {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: $dark-grey;
+}
+
 /*
 ** Define container size per breakpoint
 ** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
