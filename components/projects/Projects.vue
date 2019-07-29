@@ -14,7 +14,7 @@
           <div class="columns is-mobile options-columns">
             <div class="column is-4 see-more" @click="showIndProMet(p.id)">See more</div>
             <div
-              class="column is-8 has-text-right"
+              class="column is-8 has-text-right user-name"
             >{{ p.specialists[0].user.first_name }} {{ p.specialists[0].user.last_name }}</div>
           </div>
         </div>
@@ -29,6 +29,22 @@
           <h1 class="project-title">{{ indProj.name }}</h1>
           <p class="project-organization">{{ indProj.organization.name }}</p>
           <p class="project-description" v-html="indProj.description"></p>
+          <p class="project-statement-purpose" v-html="indProj.statement_of_purpose"></p>
+          <div class="columns is-mobile is-vcentered">
+            <div class="column is-7">
+              <p class="current-scope-name" v-html="indProj.currentscope.name"></p>
+              <p
+                class="curent-scope-completed"
+              >Completed: {{ indProj.currentscope.summary.total_points_completed }} / {{ indProj.currentscope.summary.total_points }}</p>
+              <p class="current-scope-description" v-html="indProj.currentscope.description"></p>
+            </div>
+            <div class="column is-5">
+              <div class="specialists" v-for="(s,ke) in indProj.specialists" :key="ke">
+                <p class="specialist-name">{{ s.user.first_name }} {{ s.user.last_name}}</p>
+                <p class="specialist-role">{{ s.title}}</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -108,6 +124,10 @@ export default {
     cursor: pointer;
   }
 
+  .user-name {
+    @include project-user;
+  }
+
   /* Individual full screen project box */
 
   .full-screen-project {
@@ -132,6 +152,36 @@ export default {
 
     .project-description {
       @include ind-project-description;
+    }
+
+    .project-statement-purpose {
+      @include project-description;
+      font-style: italic;
+
+      margin-bottom: 20px;
+    }
+
+    .current-scope-name {
+      @include project-description;
+      font-weight: 800;
+    }
+
+    .curent-scope-completed {
+      @include project-description;
+      font-style: italic;
+    }
+
+    .current-scope-description {
+      @include project-description;
+    }
+
+    .specialist-name {
+      @include project-user;
+      font-weight: 800;
+    }
+
+    .specialist-role {
+      @include project-user;
     }
   }
 }

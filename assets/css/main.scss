@@ -274,6 +274,17 @@ $breakpoint-xl: 1500px;
   color: $dark-grey;
 }
 
+@mixin project-user {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: $black;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 17px;
+  }
+}
+
 @mixin ind-project-name {
   font-family: "Nunito", sans-serif;
   font-weight: 800;
@@ -293,6 +304,17 @@ $breakpoint-xl: 1500px;
 
   @media (min-width: $breakpoint-md) {
     font-size: 22px;
+  }
+}
+
+@mixin ind-project-description {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: $black;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 21px;
   }
 }
 
